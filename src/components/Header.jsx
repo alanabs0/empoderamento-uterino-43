@@ -1,4 +1,4 @@
-import { HeartHandshake, Users, BookOpen } from "lucide-react";
+import { HeartHandshake, Users, BookOpen, UserRound } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -27,6 +27,12 @@ const Header = () => {
             >
               <BookOpen className="h-5 w-5" />
               <span>Recursos</span>
+            </Link>
+            <Link 
+              to="/login" 
+              className="flex items-center space-x-1 text-gray-600 hover:text-primary transition-all hover:scale-105"
+            >
+              <UserRound className="h-5 w-5" />
             </Link>
           </nav>
         </div>
