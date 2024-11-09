@@ -1,5 +1,6 @@
-import { HomeIcon, Users, BookOpen } from "lucide-react";
+import { HomeIcon, Users, BookOpen, Activity } from "lucide-react";
 import Index from "./pages/Index.jsx";
+import Feed from "./pages/Feed.jsx";
 
 export const navItems = [
   {
@@ -7,6 +8,12 @@ export const navItems = [
     to: "/",
     icon: <HomeIcon className="h-4 w-4" />,
     page: <Index />,
+  },
+  {
+    title: "Feed",
+    to: "/feed",
+    icon: <Activity className="h-4 w-4" />,
+    page: <Feed />,
   },
   {
     title: "Grupos",
