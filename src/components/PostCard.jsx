@@ -22,23 +22,23 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6 mb-4">
+    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 mb-4">
       <div className="flex items-center mb-4">
         <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
           <span className="text-primary font-medium">{post.author[0]}</span>
         </div>
         <div className="ml-3">
-          <h3 className="font-medium text-gray-900">{post.author}</h3>
+          <h3 className="font-semibold text-gray-900">{post.author}</h3>
           <p className="text-sm text-gray-500">{post.date}</p>
         </div>
       </div>
       
-      <p className="text-gray-700 mb-4">{post.content}</p>
+      <p className="text-gray-700 mb-4 leading-relaxed">{post.content}</p>
       
       <div className="flex items-center space-x-6 text-gray-500">
         <button
           onClick={handleLike}
-          className={`flex items-center space-x-1 hover:text-primary transition-colors ${
+          className={`flex items-center space-x-1 hover:text-primary transition-all hover:scale-105 ${
             isLiked ? "text-primary" : ""
           }`}
         >
@@ -46,14 +46,14 @@ const PostCard = ({ post }) => {
           <span>{likes}</span>
         </button>
         
-        <button className="flex items-center space-x-1 hover:text-primary transition-colors">
+        <button className="flex items-center space-x-1 hover:text-primary transition-all hover:scale-105">
           <MessageCircle className="h-5 w-5" />
           <span>{post.comments}</span>
         </button>
         
         <button
           onClick={handleShare}
-          className="flex items-center space-x-1 hover:text-primary transition-colors"
+          className="flex items-center space-x-1 hover:text-primary transition-all hover:scale-105"
         >
           <Share2 className="h-5 w-5" />
           <span>Compartilhar</span>

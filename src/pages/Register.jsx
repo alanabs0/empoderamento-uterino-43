@@ -10,24 +10,28 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { HeartHandshake } from "lucide-react";
 
 const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement actual registration logic
     toast.success("Registro realizado com sucesso!");
   };
 
   const handleGoogleRegister = () => {
-    // TODO: Implement Google registration
     toast.info("Registro com Google em desenvolvimento");
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/20 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-center">Criar conta</CardTitle>
+          <div className="flex justify-center mb-4">
+            <HeartHandshake className="h-12 w-12 text-primary" />
+          </div>
+          <CardTitle className="text-2xl text-center font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+            Criar conta
+          </CardTitle>
           <CardDescription className="text-center">
             Junte-se à nossa comunidade de apoio
           </CardDescription>
@@ -37,7 +41,7 @@ const Register = () => {
             <Button
               variant="outline"
               onClick={handleGoogleRegister}
-              className="w-full"
+              className="w-full hover:bg-primary/5"
             >
               Registrar com Google
             </Button>
@@ -59,6 +63,7 @@ const Register = () => {
                   type="text"
                   placeholder="Seu nome completo"
                   required
+                  className="focus:ring-primary"
                 />
               </div>
               <div className="grid gap-2">
@@ -68,6 +73,7 @@ const Register = () => {
                   type="email"
                   placeholder="nome@exemplo.com"
                   required
+                  className="focus:ring-primary"
                 />
               </div>
               <div className="grid gap-2">
@@ -77,6 +83,7 @@ const Register = () => {
                   type="password"
                   placeholder="Crie uma senha"
                   required
+                  className="focus:ring-primary"
                 />
               </div>
               <div className="grid gap-2">
@@ -86,15 +93,16 @@ const Register = () => {
                   type="password"
                   placeholder="Confirme sua senha"
                   required
+                  className="focus:ring-primary"
                 />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full bg-primary hover:bg-primary-dark">
                 Criar conta
               </Button>
             </form>
             <div className="text-center text-sm">
               Já tem uma conta?{" "}
-              <Link to="/login" className="text-primary hover:underline">
+              <Link to="/login" className="text-primary hover:text-primary-dark font-medium">
                 Faça login
               </Link>
             </div>
