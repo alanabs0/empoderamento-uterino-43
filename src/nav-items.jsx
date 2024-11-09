@@ -3,6 +3,7 @@ import Index from "./pages/Index.jsx";
 import Feed from "./pages/Feed.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import Profile from "./pages/Profile.jsx";
 
 export const navItems = [
   {
@@ -38,5 +39,10 @@ export const navItems = [
     title: "Registro",
     to: "/register",
     page: <Register />,
+  },
+  {
+    title: "Perfil",
+    to: "/profile",
+    page: <Profile />,
   },
 ];

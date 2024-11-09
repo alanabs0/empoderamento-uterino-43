@@ -1,5 +1,11 @@
-import { HeartHandshake, Users, BookOpen, UserRound } from "lucide-react";
+import { HeartHandshake, Users, BookOpen, UserRound, Settings, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -28,12 +34,29 @@ const Header = () => {
               <BookOpen className="h-5 w-5" />
               <span>Recursos</span>
             </Link>
-            <Link 
-              to="/login" 
-              className="flex items-center space-x-1 text-gray-600 hover:text-primary transition-all hover:scale-105"
-            >
-              <UserRound className="h-5 w-5" />
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-600 hover:text-primary transition-all hover:scale-105">
+                <UserRound className="h-5 w-5" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link to="/profile" className="flex items-center space-x-2">
+                    <UserRound className="h-4 w-4" />
+                    <span>Perfil</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/settings" className="flex items-center space-x-2">
+                    <Settings className="h-4 w-4" />
+                    <span>Configurações</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center space-x-2 text-red-600">
+                  <LogOut className="h-4 w-4" />
+                  <span>Sair</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
         </div>
       </div>
