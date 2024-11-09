@@ -1,6 +1,8 @@
 import { HomeIcon, Users, BookOpen, Activity } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import Feed from "./pages/Feed.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 
 export const navItems = [
   {
@@ -26,5 +28,15 @@ export const navItems = [
     to: "/recursos",
     icon: <BookOpen className="h-4 w-4" />,
     page: <Index />,
+  },
+  {
+    title: "Login",
+    to: "/login",
+    page: <Login />,
+  },
+  {
+    title: "Registro",
+    to: "/register",
+    page: <Register />,
   },
 ];
